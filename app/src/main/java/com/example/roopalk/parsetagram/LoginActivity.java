@@ -1,5 +1,6 @@
 package com.example.roopalk.parsetagram;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -59,9 +60,12 @@ public class LoginActivity extends AppCompatActivity
             @Override
             public void done(ParseUser user, ParseException e)
             {
-                if(e != null)
+                if(e == null)
                 {
                     Log.d(TAG, "Login successful!");
+                    Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                    startActivity(intent);
+                    finish();
                 }
                 else
                 {
