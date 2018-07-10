@@ -2,11 +2,14 @@ package com.example.roopalk.parsetagram;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.parse.ParseException;
 import com.parse.ParseUser;
+import com.parse.SignUpCallback;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -14,8 +17,8 @@ import butterknife.ButterKnife;
 public class SignUpActivity extends AppCompatActivity
 {
     @BindView(R.id.etEmail) EditText etEmail;
-    @BindView(R.id.etName) EditText etName;
     @BindView(R.id.etUsername) EditText etUsername;
+    @BindView(R.id.etHandle) EditText etHandle;
     @BindView(R.id.etPassword) EditText etPassword;
     @BindView(R.id.btnSignUp) Button btnSignUp;
 
@@ -28,29 +31,46 @@ public class SignUpActivity extends AppCompatActivity
         //binding with butterknife
         ButterKnife.bind(this);
 
-        //get all the text fields
-        String email, name, username, password;
-        email = etEmail.getText().toString();
-        name = etName.getText().toString();
-        username = etUsername.getText().toString();
-        password = etPassword.getText().toString();
-
-        //creating a new ParseUser
-        ParseUser newUser = new ParseUser();
-
-        //set properties of the user
-        newUser.setEmail(email);
-        newUser.setUsername(username);
-        newUser.setPassword(password);
-        
-
         //set onClickListener for the button
         btnSignUp.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
-               finish();
+                //get all the text fields
+                String email, username, handle, password;
+                email = etEmail.getText().toString();
+                username = etUsername.getText().toString();
+                handle = "@" + etHandle.getText().toString(); //handle
+                password = etPassword.getText().toString();
+
+                //creating a new ParseUser
+                final ParseUser newUser = new ParseUser();
+
+                //set properties of the user
+                newUser.setEmail(email);
+                newUser.put("handle", handle); //setting the handle
+                newUser.setPassword(password);
+                newUser.setUsername(username);
+                //invoke signUpInBackground
+
+                newUser.signUpInBackground(new SignUpCallback()
+                {
+                    @Override
+                    public void done(ParseException e)
+                    {
+                        if(e == null)
+                        {
+                            Log.i("SignUpActivity", "Sign up successful");
+                            finish();
+                        }
+                        else
+                        {
+                            Log.e("SignUpActivity", "Sign up failed");
+                            e.printStackTrace();
+                        }
+                    }
+                });
             }
         });
     }

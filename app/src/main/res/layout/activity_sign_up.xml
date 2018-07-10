@@ -17,17 +17,8 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/etName"
+        android:id="@+id/etUserame"
         android:layout_below="@id/etEmail"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:hint="Full Name"/>
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/etUsername"
-        android:layout_below="@id/etName"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
         android:hint="Username"/>
@@ -35,21 +26,29 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/etPassword"
+        android:id="@+id/etHandle"
         android:layout_below="@id/etUsername"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
-        android:hint="Password"/>
+        android:hint="Handle"/>
 
-    <Button
+    <EditText
+        android:id="@+id/etPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:hint="Password" />
+
+    <Button
         android:id="@+id/btnSignUp"
-        android:layout_below="@id/etPassword"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:text="Sign Up"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="157dp"
         android:background="@color/colorPrimary"
-        android:textColor="#FFFFFF"/>
+        android:text="Sign Up"
+        android:textColor="#FFFFFF" />
 
 </RelativeLayout>
