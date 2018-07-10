@@ -21,6 +21,7 @@ public class LoginActivity extends AppCompatActivity
     @BindView(R.id.etUsername) EditText etUsername;
     @BindView(R.id.etPassword) EditText etPassword;
     @BindView(R.id.btnLogin)Button btnLogin;
+    @BindView(R.id.btnSignUp) Button btnSignUp;
 
     private final static String TAG = "LoginActivity";
 
@@ -48,6 +49,14 @@ public class LoginActivity extends AppCompatActivity
                 {
                     e.printStackTrace();
                 }
+            }
+        });
+
+        btnSignUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, SignUpActivity.class);
+                startActivity(intent);
             }
         });
     }

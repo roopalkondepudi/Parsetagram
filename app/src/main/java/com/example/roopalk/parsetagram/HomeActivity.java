@@ -1,12 +1,12 @@
 package com.example.roopalk.parsetagram;
 
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import com.example.roopalk.parsetagram.model.Post;
 import com.parse.FindCallback;
@@ -24,10 +24,12 @@ import butterknife.ButterKnife;
 public class HomeActivity extends AppCompatActivity {
 
     public static final String TAG = "HomeActivity";
-    private static final String imagePath = "/storage/emulated/0/DCIM/Camera/IMG_20180709_175145.jpg";
+    private static final String imagePath = "/DCIM/Camera/IMG_20180710_114531.jpg";
     @BindView(R.id.etDescription) EditText etDescription;
     @BindView(R.id.create_btn) Button btnCreate;
     @BindView(R.id.refresh_btn) Button btnRefresh;
+
+    byte [] image;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,13 +47,23 @@ public class HomeActivity extends AppCompatActivity {
         btnCreate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getBaseContext(), "whatever", Toast.LENGTH_LONG).show();
+                //Toast.makeText(getBaseContext(), "whatever", Toast.LENGTH_LONG).show();
                 final String description = etDescription.getText().toString();
                 final ParseUser user = ParseUser.getCurrentUser();
 
-                final File file = new File(imagePath);
+                String path = Environment.getExternalStorageDirectory().getPath();
+
+                final File file = new File(path+imagePath);
                 final ParseFile parseFile = new ParseFile(file);
-                createPost(description, parseFile, user);
+                parseFile.saveInBackground(new SaveCallback() {
+                    @Override
+                    public void done(ParseException e) {
+                        if(e == null)
+                            createPost(description, parseFile, user);
+                        else
+                            e.printStackTrace();
+                    }
+                });
             }
         });
     }
@@ -92,7 +104,6 @@ public class HomeActivity extends AppCompatActivity {
             public void done(ParseException e) {
                 if(e == null)
                 {
-
                     Log.d(TAG, "Create post success!");
                 }
                 else
