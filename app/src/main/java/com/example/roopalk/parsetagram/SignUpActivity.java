@@ -6,6 +6,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.parse.ParseUser;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -34,6 +36,13 @@ public class SignUpActivity extends AppCompatActivity
         password = etPassword.getText().toString();
 
         //creating a new ParseUser
+        ParseUser newUser = new ParseUser();
+
+        //set properties of the user
+        newUser.setEmail(email);
+        newUser.setUsername(username);
+        newUser.setPassword(password);
+        
 
         //set onClickListener for the button
         btnSignUp.setOnClickListener(new View.OnClickListener()

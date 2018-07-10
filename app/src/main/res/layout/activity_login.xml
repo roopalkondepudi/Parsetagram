@@ -33,4 +33,14 @@
         android:background="@color/colorAccent"
         android:text="Sign In" />
 
+    <Button
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnSignUp"
+        android:layout_below="@id/btnLogin"
+        android:text="Sign Up"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:background="@color/colorPrimary"/>
+
 </RelativeLayout>
