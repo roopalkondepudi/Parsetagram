@@ -6,12 +6,31 @@
     android:layout_height="match_parent"
     tools:context=".HomeActivity">
 
+    <ImageView
+        android:id="@+id/ivPreview"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="71dp" />
+
+    <ImageView
+        android:layout_width="79dp"
+        android:layout_height="76dp"
+        android:layout_alignBottom="@+id/ivPreview"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="43dp"
+        android:src="@drawable/camera_shadow_fill"
+        android:id="@+id/camera_btn"/>
+
     <EditText
         android:id="@+id/etDescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="220dp"
         android:hint="Enter a description"
         android:inputType="text" />
 
@@ -29,9 +48,10 @@
     <Button
         android:id="@+id/refresh_btn"
         android:layout_width="wrap_content"
-        android:layout_height="61dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
+        android:layout_marginBottom="42dp"
         android:text="Refresh"
         tools:layout_editor_absoluteX="157dp"
         tools:layout_editor_absoluteY="415dp" />
