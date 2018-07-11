@@ -57,6 +57,7 @@ public class LoginActivity extends AppCompatActivity
             public void onClick(View v) {
                 Intent intent = new Intent(LoginActivity.this, SignUpActivity.class);
                 startActivity(intent);
+
             }
         });
     }
@@ -74,6 +75,10 @@ public class LoginActivity extends AppCompatActivity
                     Log.d(TAG, "Login successful!");
                     Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
                     startActivity(intent);
+
+                    //Intent intent = new Intent(LoginActivity.this, LogoutActivity.class);
+                    //startActivity(intent);
+
                     finish();
                 }
                 else

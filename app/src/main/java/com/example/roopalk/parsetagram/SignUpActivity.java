@@ -62,7 +62,6 @@ public class SignUpActivity extends AppCompatActivity
                         if(e == null)
                         {
                             Log.i("SignUpActivity", "Sign up successful");
-                            finish();
                         }
                         else
                         {

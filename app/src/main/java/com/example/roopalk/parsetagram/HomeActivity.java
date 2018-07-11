@@ -1,9 +1,14 @@
 package com.example.roopalk.parsetagram;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
+import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -21,15 +26,28 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity
+{
+
+    //request image capture
+    static final int REQUEST_IMAGE_CAPTURE = 3;
+
+    //intent to take a picture
+    private void takePicture()
+    {
+        Intent photoIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        if(photoIntent.resolveActivity(getPackageManager()) != null)
+        {
+            startActivityForResult(photoIntent, REQUEST_IMAGE_CAPTURE);
+        }
+
+    }
 
     public static final String TAG = "HomeActivity";
     private static final String imagePath = "/DCIM/Camera/IMG_20180710_114531.jpg";
     @BindView(R.id.etDescription) EditText etDescription;
     @BindView(R.id.create_btn) Button btnCreate;
     @BindView(R.id.refresh_btn) Button btnRefresh;
-
-    byte [] image;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -113,5 +131,27 @@ public class HomeActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    //make the menu
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch(item.getItemId())
+        {
+            case R.id.logout:
+                Intent intent = new Intent(HomeActivity.this, LogoutActivity.class);
+                startActivity(intent);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }
