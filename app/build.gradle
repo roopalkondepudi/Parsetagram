@@ -18,6 +18,11 @@ android {
     }
 }
 
+repositories {
+    mavenCentral()
+    google()
+}
+
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:appcompat-v7:27.1.1'
@@ -29,7 +34,16 @@ dependencies {
     //Parse dependencies
     implementation 'com.parse.bolts:bolts-android:1.4.0'
     implementation 'com.parse:parse-android:1.17.3'
+    implementation 'com.parse:parseui-widget-android:0.0.2'
     //Butterknife dependencies
     implementation 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    //Glide dependencies
+    implementation 'com.github.bumptech.glide:glide:4.7.1'
+    implementation 'jp.wasabeef:glide-transformations:3.3.0'
+    implementation 'jp.co.cyberagent.android.gpuimage:gpuimage-library:1.4.1'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.7.1'
+    //Parcel dependencies
+    implementation 'org.parceler:parceler-api:1.1.6'
+    annotationProcessor 'org.parceler:parceler:1.1.6'
 }
