@@ -27,6 +27,7 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/fileprovider" />
         </provider>
+
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -40,6 +41,8 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".SignUpActivity" />
         <activity android:name=".LogoutActivity" />
+        <activity android:name=".PostDetailsActivity" />
+        <activity android:name=".CameraActivity"></activity>
     </application>
 
 </manifest>
