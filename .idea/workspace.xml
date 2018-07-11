@@ -9,71 +9,7 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ac4e14b4-7a8e-4edc-be3a-4ab53ece29bb" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/classAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/classAnalysis.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/javaCompile.lock" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/javaCompile.lock" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/taskHistory.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.lock" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/roopalk/parsetagram/HomeActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/roopalk/parsetagram/HomeActivity.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/roopalk/parsetagram/LoginActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/roopalk/parsetagram/LoginActivity.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/roopalk/parsetagram/SignUpActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/roopalk/parsetagram/SignUpActivity.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/instagram_android_assets/attrs.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/instagram_android_assets/colors.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/instagram_android_assets/dimens.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/instagram_android_assets/drawable-xxhdpi/camera_shadow_fill.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/instagram_android_assets/drawable-xxhdpi/direct.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/instagram_android_assets/drawable-xxhdpi/instagram_home_filled_24.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/instagram_android_assets/drawable-xxhdpi/instagram_home_outline_24.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/instagram_android_assets/drawable-xxhdpi/instagram_new_post_filled_24.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/instagram_android_assets/drawable-xxhdpi/instagram_new_post_outline_24.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/instagram_android_assets/drawable-xxhdpi/instagram_user_filled_24.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/instagram_android_assets/drawable-xxhdpi/instagram_user_outline_24.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/instagram_android_assets/drawable-xxhdpi/nav_inbox_paper_plane.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/instagram_android_assets/drawable-xxhdpi/nav_logo_whiteout.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/instagram_android_assets/drawable-xxhdpi/nux_dayone_landing_logo.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/instagram_android_assets/drawable/media_option_button.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/instagram_android_assets/drawable/ufi_comment.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/instagram_android_assets/drawable/ufi_heart.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/instagram_android_assets/drawable/ufi_heart_active.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/instagram_android_assets/drawable/ufi_heart_icon.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/instagram_android_assets/drawable/ufi_more.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/instagram_android_assets/drawable/ufi_new_direct.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/instagram_android_assets/drawable/ufi_save.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/instagram_android_assets/drawable/ufi_save_active.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/instagram_android_assets/drawable/ufi_save_icon.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/instagram_android_assets/icon.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/instagram_android_assets/instagram_android_assets/drawable-xxhdpi/camera_shadow_fill.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/instagram_android_assets/instagram_android_assets/drawable-xxhdpi/direct.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/instagram_android_assets/instagram_android_assets/drawable-xxhdpi/instagram_home_filled_24.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/instagram_android_assets/instagram_android_assets/drawable-xxhdpi/instagram_home_outline_24.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/instagram_android_assets/instagram_android_assets/drawable-xxhdpi/instagram_new_post_filled_24.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/instagram_android_assets/instagram_android_assets/drawable-xxhdpi/instagram_new_post_outline_24.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/instagram_android_assets/instagram_android_assets/drawable-xxhdpi/instagram_user_filled_24.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/instagram_android_assets/instagram_android_assets/drawable-xxhdpi/instagram_user_outline_24.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/instagram_android_assets/instagram_android_assets/drawable-xxhdpi/media_option_button.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/instagram_android_assets/instagram_android_assets/drawable-xxhdpi/nav_inbox_paper_plane.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/instagram_android_assets/instagram_android_assets/drawable-xxhdpi/nav_logo_whiteout.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/instagram_android_assets/instagram_android_assets/drawable-xxhdpi/nux_dayone_landing_logo.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/instagram_android_assets/instagram_android_assets/drawable-xxhdpi/ufi_comment.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/instagram_android_assets/instagram_android_assets/drawable-xxhdpi/ufi_heart.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/instagram_android_assets/instagram_android_assets/drawable-xxhdpi/ufi_heart_active.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/instagram_android_assets/instagram_android_assets/drawable-xxhdpi/ufi_more.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/instagram_android_assets/instagram_android_assets/drawable-xxhdpi/ufi_new_direct.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/instagram_android_assets/instagram_android_assets/drawable-xxhdpi/ufi_save.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/instagram_android_assets/instagram_android_assets/drawable-xxhdpi/ufi_save_active.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/instagram_android_assets/instagram_android_assets/drawable/ufi_heart_icon.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/instagram_android_assets/instagram_android_assets/drawable/ufi_save_icon.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/instagram_android_assets/instagram_android_assets/icon.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/instagram_android_assets/login_landing.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/instagram_android_assets/styles.xml" afterPath="" />
-    </list>
+    <list default="true" id="ac4e14b4-7a8e-4edc-be3a-4ab53ece29bb" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -153,8 +89,8 @@
       <file leaf-file-name="HomeActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/roopalk/parsetagram/HomeActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="178">
-              <caret line="38" column="27" lean-forward="false" selection-start-line="38" selection-start-column="27" selection-end-line="38" selection-end-column="27" />
+            <state relative-caret-position="478">
+              <caret line="63" column="0" lean-forward="true" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -2945,8 +2881,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/roopalk/parsetagram/HomeActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="38" column="27" lean-forward="false" selection-start-line="38" selection-start-column="27" selection-end-line="38" selection-end-column="27" />
+        <state relative-caret-position="478">
+          <caret line="63" column="0" lean-forward="true" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
           <folding />
         </state>
       </provider>
