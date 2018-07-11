@@ -1,5 +1,6 @@
 package com.example.roopalk.parsetagram;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -25,7 +26,8 @@ public class LogoutActivity extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 ParseUser.logOut();
-                finish();
+                Intent intent = new Intent(LogoutActivity.this, LoginActivity.class);
+                startActivity(intent);
             }
         });
     }

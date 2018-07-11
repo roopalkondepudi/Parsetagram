@@ -50,7 +50,7 @@ public class HomeActivity extends AppCompatActivity
     @BindView(R.id.create_btn) Button btnCreate;
     @BindView(R.id.refresh_btn) Button btnRefresh;
     @BindView(R.id.camera_btn) ImageView ivCamera;
-    @BindView(R.id.my_toolbar) Toolbar toolbar;
+    @BindView(R.id.toolbar) Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
