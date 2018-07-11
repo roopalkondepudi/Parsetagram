@@ -34,7 +34,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>
         context = parent.getContext();
         LayoutInflater inflater = LayoutInflater.from(context);
 
-        View postView = inflater.inflate(R.layout.activity_post_details, parent, false);
+        View postView = inflater.inflate(R.layout.item_post, parent, false);
         ViewHolder viewHolder = new ViewHolder(postView);
         return viewHolder;
     }
@@ -49,6 +49,8 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>
         GlideApp.with(context)
                 .load(post.getKeyImage().getUrl())
                 .into(holder.ivPostImage);
+
+       // Log.i("whatever", post.getKeyImage().getUrl());
     }
 
     @Override

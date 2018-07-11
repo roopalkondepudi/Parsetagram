@@ -88,6 +88,7 @@ public class HomeActivity extends AppCompatActivity
                     for(int i = 0; i < objects.size(); i++)
                     {
                         posts.add(objects.get(i));
+                        postAdapter.notifyItemInserted(posts.size() - 1);
                         Log.d(TAG, "Post[" + i + "] = " + objects.get(i).getKeyDescription() + "\n username = " + objects.get(i).getKeyUser().getUsername());
                     }
                 }
