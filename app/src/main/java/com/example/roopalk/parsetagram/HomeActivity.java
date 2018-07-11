@@ -11,6 +11,7 @@ import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.v4.content.FileProvider;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -49,6 +50,7 @@ public class HomeActivity extends AppCompatActivity
     @BindView(R.id.create_btn) Button btnCreate;
     @BindView(R.id.refresh_btn) Button btnRefresh;
     @BindView(R.id.camera_btn) ImageView ivCamera;
+    @BindView(R.id.my_toolbar) Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,7 +71,9 @@ public class HomeActivity extends AppCompatActivity
                 //Toast.makeText(getBaseContext(), "whatever", Toast.LENGTH_LONG).show();
                 final String description = etDescription.getText().toString();
                 final ParseUser user = ParseUser.getCurrentUser();
-                final ParseFile parseFile = new ParseFile(photoFile);
+
+                File file = getPhotoFileUri(photoFileName);
+                final ParseFile parseFile = new ParseFile(file);
 
                 parseFile.saveInBackground(new SaveCallback() {
                     @Override
@@ -89,6 +93,8 @@ public class HomeActivity extends AppCompatActivity
                 onLaunchCamera(v);
             }
         });
+
+        setSupportActionBar(toolbar);
     }
 
     private void loadTopPosts()
@@ -165,7 +171,7 @@ public class HomeActivity extends AppCompatActivity
         // create Intent to take a picture and return control to the calling application
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         // Create a File reference to access to future access
-        photoFile = new File(getExternalFilesDir(Environment.DIRECTORY_PICTURES), "share_image_" + System.currentTimeMillis() + ".png");
+        photoFile = getPhotoFileUri(photoFileName);
 
         // wrap File object into a content provider
         // required for API >= 24
@@ -209,6 +215,7 @@ public class HomeActivity extends AppCompatActivity
                 // Load the taken image into a preview
                 ImageView ivPreview = (ImageView) findViewById(R.id.ivPreview);
                 ivPreview.setImageBitmap(takenImage);
+
             } else { // Result was a failure
                 Toast.makeText(this, "Picture wasn't taken!", Toast.LENGTH_SHORT).show();
             }
