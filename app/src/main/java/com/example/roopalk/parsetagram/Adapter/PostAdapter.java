@@ -14,6 +14,8 @@ import com.example.roopalk.parsetagram.PostDetailsActivity;
 import com.example.roopalk.parsetagram.R;
 import com.example.roopalk.parsetagram.model.Post;
 
+import org.parceler.Parcels;
+
 import java.util.List;
 
 import butterknife.BindView;
@@ -46,7 +48,6 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>
 
         holder.tvUsername.setText(post.getKeyUser().getUsername());
         holder.tvDescription.setText(post.getKeyDescription());
-
         GlideApp.with(context)
                 .load(post.getKeyImage().getUrl())
                 .into(holder.ivPostImage);
@@ -67,7 +68,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>
         @BindView(R.id.ivPostImage) ImageView ivPostImage;
         @BindView(R.id.ivLike) ImageView ivLike;
         @BindView(R.id.ivComment) ImageView ivComment;
-        @BindView(R.id.tvDescriptiom) TextView tvDescription;
+        @BindView(R.id.tvDescription) TextView tvDescription;
 
         public ViewHolder(View view)
         {
@@ -94,10 +95,14 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>
                 }
                 else
                 {
+                    Post post = posts.get(position);
+
                     Intent detailsIntent = new Intent(context, PostDetailsActivity.class);
+                    detailsIntent.putExtra("post", Parcels.wrap(post));
                     context.startActivity(detailsIntent);
                 }
             }
         }
     }
+
 }

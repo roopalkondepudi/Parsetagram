@@ -6,7 +6,12 @@ import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
 
+import org.parceler.Parcel;
+
+import java.util.Date;
+
 @ParseClassName("Post")
+@Parcel
 public class Post extends ParseObject
 {
     private static final String KEY_DESCRIPTION = "description";
@@ -40,6 +45,11 @@ public class Post extends ParseObject
     public void setKeyUser(ParseUser keyUser)
     {
         put(KEY_USER, keyUser);
+    }
+
+    @Override
+    public Date getCreatedAt() {
+        return getCreatedAt();
     }
 
     public static class Query extends ParseQuery<Post>
