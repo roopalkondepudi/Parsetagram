@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CameraActivity">
+    tools:context=".Activities.CameraActivity">
 
     <ImageView
         android:id="@+id/ivPreview"
@@ -21,7 +21,7 @@
         android:layout_alignParentEnd="true"
         android:layout_alignTop="@+id/create_btn"
         android:layout_marginEnd="18dp"
-        android:src="@drawable/camera_shadow_fill" />
+        android:src="@drawable/ic_camera_alt_black_24dp" />
 
     <EditText
         android:id="@+id/etDescription"

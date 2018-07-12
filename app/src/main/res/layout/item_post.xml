@@ -6,7 +6,7 @@
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:id="@+id/ivProfileImage"
-        android:src="@drawable/instagram_user_filled_24"
+        android:src="@drawable/ic_person_black_24dp"
         android:layout_marginTop="15dp"
         android:layout_marginLeft="15dp"/>
 
@@ -42,7 +42,7 @@
         android:layout_height="20dp"
         android:id="@+id/ivLike"
         android:layout_below="@id/ivPostImage"
-        android:src="@drawable/ufi_heart_icon"
+        android:src="@drawable/ic_favorite_border_black_24dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="5dp"/>
 
@@ -54,7 +54,7 @@
         android:layout_toRightOf="@id/ivLike"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="5dp"
-        android:src="@drawable/ufi_comment"/>
+        android:src="@drawable/ic_comment_outline_black_24dp"/>
 
     <TextView
         android:layout_width="wrap_content"
