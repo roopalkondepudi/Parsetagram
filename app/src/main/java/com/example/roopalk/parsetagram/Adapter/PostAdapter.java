@@ -96,7 +96,6 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>
                 else
                 {
                     Post post = posts.get(position);
-
                     Intent detailsIntent = new Intent(context, PostDetailsActivity.class);
                     detailsIntent.putExtra("post", Parcels.wrap(post));
                     context.startActivity(detailsIntent);

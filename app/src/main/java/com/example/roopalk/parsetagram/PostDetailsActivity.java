@@ -7,12 +7,11 @@ import android.widget.TextView;
 
 import com.example.roopalk.parsetagram.model.Post;
 
-import org.parceler.Parcel;
 import org.parceler.Parcels;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 
-@Parcel
 public class PostDetailsActivity extends AppCompatActivity
 {
 
@@ -28,6 +27,7 @@ public class PostDetailsActivity extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.item_post);
+        ButterKnife.bind(this);
 
         Post post = Parcels.unwrap(getIntent().getParcelableExtra("post"));
 
