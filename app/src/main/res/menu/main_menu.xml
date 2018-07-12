@@ -3,14 +3,15 @@
         xmlns:app="http://schemas.android.com/apk/res-auto">
         <item
             android:id="@+id/logout"
-            android:icon="@drawable/instagram_home_filled_24"
+            android:icon="@drawable/ic_home_black_24dp"
             android:title="Log out"
-            app:showAsAction="ifRoom">
+            app:showAsAction="ifRoom"
+            android:iconTint="@color/colorWhite">
         </item>
 
         <item
             android:id="@+id/camera"
-            android:icon="@drawable/camera_shadow_fill"
+            android:icon="@drawable/ic_camera_alt_black_24dp"
             android:title="Camera"
             app:showAsAction="ifRoom">
 

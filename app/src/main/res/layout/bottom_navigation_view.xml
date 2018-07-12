@@ -10,6 +10,6 @@
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:menu="@menu/menu_bottom_navigation"
-        android:background="@color/colorAccent"/>
+        android:background="@color/colorNavigationBar"/>
 
 </android.support.constraint.ConstraintLayout>
