@@ -45,6 +45,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>
         Post post = posts.get(position);
 
         holder.tvUsername.setText(post.getKeyUser().getUsername());
+        holder.tvDescription.setText(post.getKeyDescription());
 
         GlideApp.with(context)
                 .load(post.getKeyImage().getUrl())
@@ -66,6 +67,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>
         @BindView(R.id.ivPostImage) ImageView ivPostImage;
         @BindView(R.id.ivLike) ImageView ivLike;
         @BindView(R.id.ivComment) ImageView ivComment;
+        @BindView(R.id.tvDescriptiom) TextView tvDescription;
 
         public ViewHolder(View view)
         {
@@ -79,11 +81,22 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>
         public void onClick(View v)
         {
             int position = getAdapterPosition();
+
             if(position != RecyclerView.NO_POSITION)
             {
-                Post post = posts.get(position);
-                Intent detailsIntent = new Intent(context, PostDetailsActivity.class);
-                context.startActivity(detailsIntent);
+                if(v.getId() == R.id.ivLike)
+                {
+
+                }
+                else if (v.getId() == R.id.ivComment)
+                {
+
+                }
+                else
+                {
+                    Intent detailsIntent = new Intent(context, PostDetailsActivity.class);
+                    context.startActivity(detailsIntent);
+                }
             }
         }
     }
