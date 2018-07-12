@@ -1,4 +1,4 @@
-package com.example.roopalk.parsetagram.Activities;
+package com.example.roopalk.parsetagram.Fragments;
 
 import android.app.Fragment;
 import android.content.Intent;
@@ -23,7 +23,6 @@ public class CameraFragment extends Fragment
 {
     public final String TAG = "Camera";
     static final int REQUEST_IMAGE_CAPTURE = 3;
-    static final int REQUEST = 32;
 
     public String photoFileName = "photo.jpg";
     File photoFile;
