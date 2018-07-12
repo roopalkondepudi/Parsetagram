@@ -6,27 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".Activities.HomeActivity">
 
-    <android.support.v4.widget.SwipeRefreshLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/swipeContainer"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <android.support.v7.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            xmlns:tools="http://schemas.android.com/tools"
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:context=".FeedActivity"
-            android:columnWidth="90dp"
-            android:numColumns="3"
-            android:verticalSpacing="20dp"
-            android:horizontalSpacing="20dp"
-            android:gravity="center"
-            android:id="@+id/rvPost">
-
-        </android.support.v7.widget.RecyclerView>
-    </android.support.v4.widget.SwipeRefreshLayout>
+            android:layout_height="match_parent"
+            android:id="@+id/placeholder">
+        </FrameLayout>
 
     <include layout="@layout/bottom_navigation_view"/>
 </RelativeLayout>
