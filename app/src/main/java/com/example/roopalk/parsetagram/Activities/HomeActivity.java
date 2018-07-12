@@ -11,7 +11,7 @@ import android.util.Log;
 import android.view.MenuItem;
 
 import com.example.roopalk.parsetagram.Adapter.PostAdapter;
-import com.example.roopalk.parsetagram.CameraFragment;
+import com.example.roopalk.parsetagram.Fragments.CameraFragment;
 import com.example.roopalk.parsetagram.R;
 import com.example.roopalk.parsetagram.model.Post;
 import com.parse.FindCallback;
