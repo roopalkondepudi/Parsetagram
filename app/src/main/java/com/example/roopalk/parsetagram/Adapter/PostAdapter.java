@@ -10,12 +10,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.roopalk.parsetagram.GlideApp;
-import com.example.roopalk.parsetagram.PostDetailsActivity;
+import com.example.roopalk.parsetagram.Activities.PostDetailsActivity;
 import com.example.roopalk.parsetagram.R;
 import com.example.roopalk.parsetagram.model.Post;
 
 import org.parceler.Parcels;
 
+import java.util.Date;
 import java.util.List;
 
 import butterknife.BindView;
@@ -48,6 +49,8 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>
 
         holder.tvUsername.setText(post.getKeyUser().getUsername());
         holder.tvDescription.setText(post.getKeyDescription());
+        holder.tvTimeStamp.setText(getDate(post.getCreatedAt()));
+
         GlideApp.with(context)
                 .load(post.getKeyImage().getUrl())
                 .into(holder.ivPostImage);
@@ -103,5 +106,8 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>
             }
         }
     }
-
+    public static String getDate(Date date)
+    {
+       return date.toString();
+    }
 }
