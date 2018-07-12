@@ -1,4 +1,4 @@
-package com.example.roopalk.parsetagram;
+package com.example.roopalk.parsetagram.Activities;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -16,6 +16,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.roopalk.parsetagram.R;
 import com.example.roopalk.parsetagram.model.Post;
 import com.parse.ParseException;
 import com.parse.ParseFile;

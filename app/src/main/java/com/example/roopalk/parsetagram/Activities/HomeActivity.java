@@ -1,18 +1,18 @@
-package com.example.roopalk.parsetagram;
+package com.example.roopalk.parsetagram.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 
 import com.example.roopalk.parsetagram.Adapter.PostAdapter;
+import com.example.roopalk.parsetagram.CameraFragment;
+import com.example.roopalk.parsetagram.R;
 import com.example.roopalk.parsetagram.model.Post;
 import com.parse.FindCallback;
 import com.parse.ParseException;
@@ -28,14 +28,17 @@ public class HomeActivity extends AppCompatActivity
 
     public static final String TAG = "HomeActivity";
     //private static final String imagePath = "/DCIM/Camera/IMG_20180710_114531.jpg";
-    @BindView(R.id.toolbar) Toolbar toolbar;
     @BindView(R.id.rvPost) RecyclerView rvPosts;
+    @BindView(R.id.bottom_navigation) BottomNavigationView bnv;
     ArrayList<Post> posts;
     PostAdapter postAdapter;
 
     private SwipeRefreshLayout swipeContainer;
 
     private final int REQUEST = 32;
+
+    //fragments
+    private CameraFragment cameraFragment;
 
 
     @Override
@@ -44,6 +47,12 @@ public class HomeActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         ButterKnife.bind(this);
+
+//        //set fragments
+//        if(cameraFragment != null)
+//        {
+//            cameraFragment = CameraFragment.newInstance();
+//        }
 
         posts = new ArrayList<>();
 
@@ -55,7 +64,7 @@ public class HomeActivity extends AppCompatActivity
 
         rvPosts.setAdapter(postAdapter);
 
-        setSupportActionBar(toolbar);
+       // setSupportActionBar(toolbar);
 
         swipeContainer = (SwipeRefreshLayout) findViewById(R.id.swipeContainer);
         // Setup refresh listener which triggers new data loading
@@ -72,6 +81,28 @@ public class HomeActivity extends AppCompatActivity
 
         swipeContainer.setColorSchemeResources(android.R.color.holo_blue_bright, android.R.color.holo_green_light, android.R.color.holo_orange_light, android.R.color.holo_red_light);
 
+        //make the bottom navigation menu
+        bnv.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(MenuItem item)
+            {
+                switch (item.getItemId()) {
+                    case R.id.home:
+                        // do something here
+                        return true;
+                    case R.id.camera:
+//                        FragmentTransaction cameraTransaction = getSupportFragmentManager()
+//                                .beginTransaction()
+//                                .replace(R.id.container, cameraFragment)
+//                                .commit();
+                        return true;
+                    case R.id.user:
+                        // do something here
+                        return true;
+                }
+                return true;
+            }
+        });
     }
 
     public void loadTopPosts()
@@ -98,32 +129,6 @@ public class HomeActivity extends AppCompatActivity
                 }
             }
         });
-    }
-
-    //make the menu
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater(); //inflates the menu onto the toolbar
-        inflater.inflate(R.menu.main_menu, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) { //depending on the item selected, go to different activities
-        switch(item.getItemId())
-        {
-            case(R.id.logout):
-                Intent intent = new Intent(HomeActivity.this, LogoutActivity.class);
-                startActivity(intent);
-                return true;
-            case(R.id.camera):
-                Intent cameraIntent = new Intent(HomeActivity.this, CameraActivity.class);
-                startActivityForResult(cameraIntent, REQUEST);
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
     }
 
     @Override
