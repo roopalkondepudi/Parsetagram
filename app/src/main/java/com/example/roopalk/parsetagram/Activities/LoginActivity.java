@@ -42,15 +42,24 @@ public class LoginActivity extends AppCompatActivity
             startActivity(intent);
         }
 
+
+
+        if(etUsername.getText().toString() == "" || etPassword.getText().toString() == "")
+        {
+            btnLogin.setEnabled(false);
+        }
+        else
+        {
+            btnLogin.setEnabled(true);
+        }
+
         btnLogin.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View view)
             {
-                //getting the username and password from the edit text
                 final String username = etUsername.getText().toString();
                 final String password = etPassword.getText().toString();
-
                 //calling the login method, where we can use Parse
                 try
                 {
