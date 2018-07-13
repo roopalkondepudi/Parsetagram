@@ -42,7 +42,7 @@
         <activity android:name=".Activities.SignUpActivity" />
         <activity android:name=".Activities.LogoutActivity" />
         <activity android:name=".Activities.PostDetailsActivity" />
-        <activity android:name=".Activities.CameraActivity"></activity>
+        <activity android:name=".Activities.PostActivity"></activity>
     </application>
 
 </manifest>
