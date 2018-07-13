@@ -2,6 +2,8 @@ package com.example.roopalk.parsetagram.Fragments;
 
 import android.app.Fragment;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -12,12 +14,17 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
+import com.example.roopalk.parsetagram.Activities.PostActivity;
 import com.example.roopalk.parsetagram.R;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 
 import butterknife.ButterKnife;
+
+import static android.app.Activity.RESULT_OK;
 
 public class CameraFragment extends Fragment
 {
@@ -26,6 +33,8 @@ public class CameraFragment extends Fragment
 
     public String photoFileName = "photo.jpg";
     File photoFile;
+
+    Bitmap takenImage;
 
     public CameraFragment()
     {
@@ -84,6 +93,31 @@ public class CameraFragment extends Fragment
         File file = new File(mediaStorageDir.getPath() + File.separator + fileName);
 
         return file;
+    }
+
+    //after the photo has been taken, do this
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == REQUEST_IMAGE_CAPTURE) {
+            if (resultCode == RESULT_OK) {
+                // by this point we have the camera photo on disk
+                takenImage = BitmapFactory.decodeFile(photoFile.getAbsolutePath());
+
+                //Convert to byte array
+                ByteArrayOutputStream stream = new ByteArrayOutputStream();
+                takenImage.compress(Bitmap.CompressFormat.PNG, 100, stream);
+                byte[] byteArray = stream.toByteArray();
+
+                Intent intent = new Intent(getActivity(), PostActivity.class);
+                intent.putExtra("image", byteArray);
+                intent.putExtra("file", photoFile);
+                startActivity(intent);
+            }
+            else
+            { // Result was a failure
+                Toast.makeText(getContext(), "Picture wasn't taken!", Toast.LENGTH_SHORT).show();
+            }
+        }
     }
 
 }

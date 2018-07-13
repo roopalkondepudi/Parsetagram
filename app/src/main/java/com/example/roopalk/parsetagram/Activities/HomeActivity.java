@@ -2,6 +2,7 @@ package com.example.roopalk.parsetagram.Activities;
 
 import android.app.Fragment;
 import android.app.FragmentTransaction;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
@@ -17,7 +18,9 @@ import com.example.roopalk.parsetagram.R;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity
+{
+    boolean works = false;
 
     @BindView(R.id.bottom_navigation)
     BottomNavigationView bnv;
@@ -28,6 +31,7 @@ public class HomeActivity extends AppCompatActivity {
     private Fragment timelineFragment;
     private Fragment userFragment;
     private Fragment postDetailsFragment;
+    private Bitmap imageBitmap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +46,11 @@ public class HomeActivity extends AppCompatActivity {
         userFragment = new UserFragment();
         postDetailsFragment = new PostDetailsFragment();
 
+        //On launch, display the home timeline
+        FragmentTransaction ft = getFragmentManager().beginTransaction();
+        ft.replace(R.id.placeholder, timelineFragment);
+        ft.commit();
+
         //make the bottom navigation menu
         bnv.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -54,7 +63,12 @@ public class HomeActivity extends AppCompatActivity {
                         return true;
                     case R.id.camera:
                         fragmentTransaction.replace(R.id.placeholder, cameraFragment);
-                        //fragmentTransaction.add(R.id.placeholder, postFragment);
+                        if(works)
+                        {
+                            postFragment = new PostFragment().newInstance(imageBitmap);
+                            fragmentTransaction.add(R.id.placeholder, postFragment);
+                            fragmentTransaction.commit();
+                        }
                         fragmentTransaction.commit();
                         return true;
                     case R.id.user:
