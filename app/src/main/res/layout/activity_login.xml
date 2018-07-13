@@ -21,7 +21,7 @@
         android:layout_height="50dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="171dp"
+        android:layout_marginTop="200dp"
         android:paddingLeft="15dp"
         android:paddingRight="15dp"
         android:background="#33D3D3D3"
@@ -35,7 +35,7 @@
         android:paddingLeft="15dp"
         android:paddingRight="15dp"
         android:layout_centerInParent="true"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:background="#33D3D3D3"
         android:hint="Password"
         android:textColorHint="@color/colorWhite" />
@@ -61,7 +61,6 @@
         android:layout_marginBottom="83dp"
         android:background="@color/Translucent"
         android:textAllCaps="false"
-        android:textColorHint="@color/colorWhite"
+        android:textColor="@color/colorWhite"
         android:text="Sign up"/>
-
 </RelativeLayout>

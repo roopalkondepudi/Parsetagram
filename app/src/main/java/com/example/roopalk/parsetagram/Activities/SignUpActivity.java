@@ -1,5 +1,6 @@
 package com.example.roopalk.parsetagram.Activities;
 
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -22,6 +23,8 @@ public class SignUpActivity extends AppCompatActivity
     @BindView(R.id.etHandle) EditText etHandle;
     @BindView(R.id.etPassword) EditText etPassword;
     @BindView(R.id.btnSignUp) Button btnSignUp;
+
+    Bitmap image;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -63,6 +66,7 @@ public class SignUpActivity extends AppCompatActivity
                         if(e == null)
                         {
                             Log.i("SignUpActivity", "Sign up successful");
+                            finish();
                         }
                         else
                         {

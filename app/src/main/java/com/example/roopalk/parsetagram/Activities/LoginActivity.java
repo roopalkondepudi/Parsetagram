@@ -24,6 +24,7 @@ public class LoginActivity extends AppCompatActivity
     @BindView(R.id.btnLogin)Button btnLogin;
     @BindView(R.id.btnSignUp) Button btnSignUp;
 
+    public final int RESULT = 14;
     private final static String TAG = "LoginActivity";
 
     @Override
@@ -74,10 +75,10 @@ public class LoginActivity extends AppCompatActivity
 
         btnSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v)
+            {
                 Intent intent = new Intent(LoginActivity.this, SignUpActivity.class);
                 startActivity(intent);
-
             }
         });
     }
@@ -95,10 +96,6 @@ public class LoginActivity extends AppCompatActivity
                     Log.d(TAG, "Login successful!");
                     Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
                     startActivity(intent);
-
-                    //Intent intent = new Intent(LoginActivity.this, LogoutActivity.class);
-                    //startActivity(intent);
-
                     finish();
                 }
                 else

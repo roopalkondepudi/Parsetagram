@@ -4,51 +4,66 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activities.SignUpActivity">
+    tools:context=".Activities.SignUpActivity"
+    android:background="@drawable/gradient">
 
     <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/etEmail"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
-        android:hint="Email"/>
+        android:layout_marginTop="100dp"
+        android:hint="Email"
+        android:paddingLeft="10dp"
+        android:background="@color/Translucent"
+        android:textColorHint="@color/colorWhite"/>
 
     <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/etUserame"
+        android:id="@+id/etUsername"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
         android:layout_below="@id/etEmail"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
-        android:hint="Username"/>
+        android:hint="Username"
+        android:paddingLeft="10dp"
+        android:background="@color/Translucent"
+        android:textColorHint="@color/colorWhite"/>
 
     <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
         android:id="@+id/etHandle"
         android:layout_below="@id/etUsername"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
-        android:hint="Handle"/>
+        android:hint="Handle"
+        android:paddingLeft="10dp"
+        android:background="@color/Translucent"
+        android:textColorHint="@color/colorWhite"/>
 
     <EditText
         android:id="@+id/etPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_centerVertical="true"
-        android:hint="Password" />
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:hint="Password"
+        android:layout_below="@id/etHandle"
+        android:paddingLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/Translucent"
+        android:textColorHint="@color/colorWhite"/>
 
     <Button
         android:id="@+id/btnSignUp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="157dp"
-        android:background="@color/colorPrimary"
-        android:text="Sign Up"
-        android:textColor="#FFFFFF" />
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:background="@color/Translucent"
+        android:text="Sign up"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:textAllCaps="false"
+        android:layout_below="@id/etPassword"
+        android:textColor="@color/colorWhite" />
 
 </RelativeLayout>

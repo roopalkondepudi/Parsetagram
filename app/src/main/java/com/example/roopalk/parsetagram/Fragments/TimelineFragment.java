@@ -33,7 +33,7 @@ public class TimelineFragment extends Fragment {
     ArrayList<Post> posts;
     PostAdapter postAdapter;
 
-    private onFragmentInteractionListener listener;
+    public onFragmentInteractionListener listener;
 
     private final String TAG = "TimelineFragment";
 
@@ -61,7 +61,6 @@ public class TimelineFragment extends Fragment {
 
 
         postAdapter = new PostAdapter(posts, listener);
-
         rvPosts.setLayoutManager(new LinearLayoutManager(getContext()));
 
         rvPosts.setAdapter(postAdapter);
@@ -104,9 +103,10 @@ public class TimelineFragment extends Fragment {
             @Override
             public void done(List<Post> objects, ParseException e) {
                 if (e == null) {
+                    posts.clear();
                     for (int i = 0; i < objects.size(); i++) {
                         posts.add(objects.get(i));
-                        postAdapter.notifyItemInserted(posts.size() - 1);
+                        postAdapter.notifyDataSetChanged();
                         //Log.d(TAG, "Post[" + i + "] = " + objects.get(i).getKeyDescription() + "\n username = " + objects.get(i).getKeyUser().getUsername());
                     }
                 } else {
@@ -114,13 +114,5 @@ public class TimelineFragment extends Fragment {
                 }
             }
         });
-    }
-
-    private onFragmentInteractionListener list;
-    // Define the events that the fragment will use to communicate
-    public interface onFragmentInteractionListener
-    {
-        // This can be any number of events to be sent to the activity
-        public void moveToDetailsPage(Post post);
     }
 }

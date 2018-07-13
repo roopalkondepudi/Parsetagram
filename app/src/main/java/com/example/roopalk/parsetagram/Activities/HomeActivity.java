@@ -52,9 +52,7 @@ public class HomeActivity extends AppCompatActivity implements onFragmentInterac
         postDetailsFragment = new PostDetailsFragment();
 
         //On launch, display the home timeline
-        FragmentTransaction ft = getFragmentManager().beginTransaction();
-        ft.replace(R.id.placeholder, timelineFragment);
-        ft.commit();
+        moveToTimeline();
 
         //make the bottom navigation menu
         bnv.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -71,7 +69,8 @@ public class HomeActivity extends AppCompatActivity implements onFragmentInterac
                         fragmentTransaction.commit();
                         return true;
                     case R.id.user:
-                        // do something here
+                        fragmentTransaction.replace(R.id.placeholder, userFragment);
+                        fragmentTransaction.commit();
                         return true;
                 }
                 return true;
@@ -100,6 +99,7 @@ public class HomeActivity extends AppCompatActivity implements onFragmentInterac
     public void moveToTimeline()
     {
         FragmentTransaction ft = getFragmentManager().beginTransaction();
+        bnv.setSelectedItemId(R.id.home);
         ft.replace(R.id.placeholder, timelineFragment);
         ft.commit();
     }

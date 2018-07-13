@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.roopalk.parsetagram.Fragments.TimelineFragment;
+import com.example.roopalk.parsetagram.Fragments.onFragmentInteractionListener;
 import com.example.roopalk.parsetagram.GlideApp;
 import com.example.roopalk.parsetagram.R;
 import com.example.roopalk.parsetagram.model.Post;
@@ -24,9 +24,9 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>
     Context context;
     List<Post> posts;
 
-    TimelineFragment.onFragmentInteractionListener listener;
+    public onFragmentInteractionListener listener;
 
-    public PostAdapter(List<Post> posts_, TimelineFragment.onFragmentInteractionListener listener)
+    public PostAdapter(List<Post> posts_, onFragmentInteractionListener listener)
     {
         posts = posts_;
         this.listener = listener;
