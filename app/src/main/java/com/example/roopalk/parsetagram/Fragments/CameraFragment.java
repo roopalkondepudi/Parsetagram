@@ -1,6 +1,7 @@
 package com.example.roopalk.parsetagram.Fragments;
 
 import android.app.Fragment;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -16,10 +17,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.example.roopalk.parsetagram.Activities.PostActivity;
 import com.example.roopalk.parsetagram.R;
 
-import java.io.ByteArrayOutputStream;
 import java.io.File;
 
 import butterknife.ButterKnife;
@@ -34,7 +33,9 @@ public class CameraFragment extends Fragment
     public String photoFileName = "photo.jpg";
     File photoFile;
 
-    Bitmap takenImage;
+    static Bitmap takenImage;
+
+    public onFragmentInteractionListener listener;
 
     public CameraFragment()
     {
@@ -102,16 +103,7 @@ public class CameraFragment extends Fragment
             if (resultCode == RESULT_OK) {
                 // by this point we have the camera photo on disk
                 takenImage = BitmapFactory.decodeFile(photoFile.getAbsolutePath());
-
-                //Convert to byte array
-                ByteArrayOutputStream stream = new ByteArrayOutputStream();
-                takenImage.compress(Bitmap.CompressFormat.PNG, 100, stream);
-                byte[] byteArray = stream.toByteArray();
-
-                Intent intent = new Intent(getActivity(), PostActivity.class);
-                intent.putExtra("image", byteArray);
-                intent.putExtra("file", photoFile);
-                startActivity(intent);
+                listener.moveToPostPage(takenImage, photoFile);
             }
             else
             { // Result was a failure
@@ -120,4 +112,16 @@ public class CameraFragment extends Fragment
         }
     }
 
+    @Override
+    public void onAttach(Context context)
+    {
+        super.onAttach(context);
+        if (context instanceof onFragmentInteractionListener)
+        {
+            listener = (onFragmentInteractionListener) context;
+        } else {
+            throw new ClassCastException(context.toString()
+                    + " must implement onFragmentInteractionListener");
+        }
+    }
 }

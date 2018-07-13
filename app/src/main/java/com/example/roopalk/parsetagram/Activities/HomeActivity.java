@@ -10,17 +10,20 @@ import android.view.MenuItem;
 
 import com.example.roopalk.parsetagram.Fragments.CameraFragment;
 import com.example.roopalk.parsetagram.Fragments.PostDetailsFragment;
+import com.example.roopalk.parsetagram.Fragments.PostFragment;
 import com.example.roopalk.parsetagram.Fragments.TimelineFragment;
 import com.example.roopalk.parsetagram.Fragments.UserFragment;
+import com.example.roopalk.parsetagram.Fragments.onFragmentInteractionListener;
 import com.example.roopalk.parsetagram.R;
 import com.example.roopalk.parsetagram.model.Post;
+
+import java.io.File;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class HomeActivity extends AppCompatActivity implements TimelineFragment.onFragmentInteractionListener
+public class HomeActivity extends AppCompatActivity implements onFragmentInteractionListener
 {
-    boolean works = false;
 
     @BindView(R.id.bottom_navigation)
     BottomNavigationView bnv;
@@ -31,7 +34,10 @@ public class HomeActivity extends AppCompatActivity implements TimelineFragment.
     private Fragment timelineFragment;
     private Fragment userFragment;
     private Fragment postDetailsFragment;
-    private Bitmap imageBitmap;
+
+
+    Bitmap bitmap;
+    File file;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,6 +85,22 @@ public class HomeActivity extends AppCompatActivity implements TimelineFragment.
         postDetailsFragment = PostDetailsFragment.newInstance(post);
         FragmentTransaction ft = getFragmentManager().beginTransaction();
         ft.replace(R.id.placeholder, postDetailsFragment); //DETAILS ACTIVITY DOES NOT WORK
+        ft.commit();
+    }
+
+    @Override
+    public void moveToPostPage(Bitmap bitmap, File file)
+    {
+        PostFragment postFragment = PostFragment.newInstance(bitmap, file);
+        FragmentTransaction ft = getFragmentManager().beginTransaction();
+        ft.replace(R.id.placeholder, postFragment);
+        ft.commit();
+    }
+
+    public void moveToTimeline()
+    {
+        FragmentTransaction ft = getFragmentManager().beginTransaction();
+        ft.replace(R.id.placeholder, timelineFragment);
         ft.commit();
     }
 }
