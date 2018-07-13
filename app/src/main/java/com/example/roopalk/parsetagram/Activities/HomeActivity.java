@@ -10,7 +10,6 @@ import android.view.MenuItem;
 
 import com.example.roopalk.parsetagram.Fragments.CameraFragment;
 import com.example.roopalk.parsetagram.Fragments.PostDetailsFragment;
-import com.example.roopalk.parsetagram.Fragments.PostFragment;
 import com.example.roopalk.parsetagram.Fragments.TimelineFragment;
 import com.example.roopalk.parsetagram.Fragments.UserFragment;
 import com.example.roopalk.parsetagram.R;
@@ -41,7 +40,6 @@ public class HomeActivity extends AppCompatActivity
 
         //setting up the fragments
         cameraFragment = new CameraFragment();
-        postFragment = new PostFragment();
         timelineFragment = new TimelineFragment();
         userFragment = new UserFragment();
         postDetailsFragment = new PostDetailsFragment();
@@ -63,12 +61,6 @@ public class HomeActivity extends AppCompatActivity
                         return true;
                     case R.id.camera:
                         fragmentTransaction.replace(R.id.placeholder, cameraFragment);
-                        if(works)
-                        {
-                            postFragment = new PostFragment().newInstance(imageBitmap);
-                            fragmentTransaction.add(R.id.placeholder, postFragment);
-                            fragmentTransaction.commit();
-                        }
                         fragmentTransaction.commit();
                         return true;
                     case R.id.user:
