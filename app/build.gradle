@@ -67,5 +67,8 @@ dependencies {
     implementation "com.android.support:transition:27.1.1"
     //Annotation library dependencies
     implementation "com.android.support:support-annotations:27.1.1"
+    //Paging library
+    implementation "android.arch.paging:runtime:1.0.0"
+
 
 }
