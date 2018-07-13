@@ -1,6 +1,7 @@
 package com.example.roopalk.parsetagram.Fragments;
 
 import android.app.Fragment;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -32,9 +33,12 @@ public class TimelineFragment extends Fragment {
     ArrayList<Post> posts;
     PostAdapter postAdapter;
 
+    private onFragmentInteractionListener listener;
+
     private final String TAG = "TimelineFragment";
 
-    public TimelineFragment() {
+    public TimelineFragment()
+    {
         // Required empty public constructor
     }
 
@@ -56,7 +60,7 @@ public class TimelineFragment extends Fragment {
         posts = new ArrayList<>();
 
 
-        postAdapter = new PostAdapter(posts);
+        postAdapter = new PostAdapter(posts, listener);
 
         rvPosts.setLayoutManager(new LinearLayoutManager(getContext()));
 
@@ -75,8 +79,22 @@ public class TimelineFragment extends Fragment {
         });
 
         swipeContainer.setColorSchemeResources(android.R.color.holo_blue_bright, android.R.color.holo_green_light, android.R.color.holo_orange_light, android.R.color.holo_red_light);
+
+        // Store the listener (activity) that will have events fired once the fragment is attached
     }
 
+    @Override
+    public void onAttach(Context context)
+    {
+        super.onAttach(context);
+        if (context instanceof onFragmentInteractionListener)
+        {
+            listener = (onFragmentInteractionListener) context;
+        } else {
+            throw new ClassCastException(context.toString()
+                    + " must implement MyListFragment.OnItemSelectedListener");
+        }
+    }
     public void loadTopPosts() {
         final Post.Query postsQuery = new Post.Query();
         postsQuery
@@ -89,12 +107,20 @@ public class TimelineFragment extends Fragment {
                     for (int i = 0; i < objects.size(); i++) {
                         posts.add(objects.get(i));
                         postAdapter.notifyItemInserted(posts.size() - 1);
-                        Log.d(TAG, "Post[" + i + "] = " + objects.get(i).getKeyDescription() + "\n username = " + objects.get(i).getKeyUser().getUsername());
+                        //Log.d(TAG, "Post[" + i + "] = " + objects.get(i).getKeyDescription() + "\n username = " + objects.get(i).getKeyUser().getUsername());
                     }
                 } else {
                     Log.e(TAG, "Failed");
                 }
             }
         });
+    }
+
+    private onFragmentInteractionListener list;
+    // Define the events that the fragment will use to communicate
+    public interface onFragmentInteractionListener
+    {
+        // This can be any number of events to be sent to the activity
+        public void moveToDetailsPage(Post post);
     }
 }

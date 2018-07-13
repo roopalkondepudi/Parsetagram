@@ -1,7 +1,6 @@
 package com.example.roopalk.parsetagram.Adapter;
 
 import android.content.Context;
-import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,12 +8,10 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.roopalk.parsetagram.Fragments.TimelineFragment;
 import com.example.roopalk.parsetagram.GlideApp;
-import com.example.roopalk.parsetagram.Activities.PostDetailsActivity;
 import com.example.roopalk.parsetagram.R;
 import com.example.roopalk.parsetagram.model.Post;
-
-import org.parceler.Parcels;
 
 import java.util.Date;
 import java.util.List;
@@ -27,9 +24,12 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>
     Context context;
     List<Post> posts;
 
-    public PostAdapter(List<Post> posts_)
+    TimelineFragment.onFragmentInteractionListener listener;
+
+    public PostAdapter(List<Post> posts_, TimelineFragment.onFragmentInteractionListener listener)
     {
         posts = posts_;
+        this.listener = listener;
     }
 
     @Override
@@ -99,9 +99,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>
                 else
                 {
                     Post post = posts.get(position);
-                    Intent detailsIntent = new Intent(context, PostDetailsActivity.class);
-                    detailsIntent.putExtra("post", Parcels.wrap(post));
-                    context.startActivity(detailsIntent);
+                    listener.moveToDetailsPage(post);
                 }
             }
         }

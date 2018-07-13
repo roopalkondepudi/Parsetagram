@@ -13,11 +13,12 @@ import com.example.roopalk.parsetagram.Fragments.PostDetailsFragment;
 import com.example.roopalk.parsetagram.Fragments.TimelineFragment;
 import com.example.roopalk.parsetagram.Fragments.UserFragment;
 import com.example.roopalk.parsetagram.R;
+import com.example.roopalk.parsetagram.model.Post;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class HomeActivity extends AppCompatActivity
+public class HomeActivity extends AppCompatActivity implements TimelineFragment.onFragmentInteractionListener
 {
     boolean works = false;
 
@@ -70,6 +71,15 @@ public class HomeActivity extends AppCompatActivity
                 return true;
             }
         });
+    }
+
+    @Override
+    public void moveToDetailsPage(Post post)
+    {
+        postDetailsFragment = PostDetailsFragment.newInstance(post);
+        FragmentTransaction ft = getFragmentManager().beginTransaction();
+        ft.replace(R.id.placeholder, postDetailsFragment); //DETAILS ACTIVITY DOES NOT WORK
+        ft.commit();
     }
 }
 
