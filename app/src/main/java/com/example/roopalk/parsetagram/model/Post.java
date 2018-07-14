@@ -13,6 +13,10 @@ public class Post extends ParseObject
     private static final String KEY_IMAGE = "image";
     private static final String KEY_USER = "user";
 
+    private int numLikes = 0;
+
+    public boolean favorited = false;
+
     public String getKeyDescription()
     {
         return getString(KEY_DESCRIPTION);
@@ -63,4 +67,14 @@ public class Post extends ParseObject
         }
     }
 
+    public void liked(boolean b)
+    {
+        favorited = b;
+        numLikes++;
+    }
+
+    public int getNumLikes()
+    {
+        return numLikes;
+    }
 }
