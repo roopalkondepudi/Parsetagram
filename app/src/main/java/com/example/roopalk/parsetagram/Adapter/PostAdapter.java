@@ -54,8 +54,6 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>
         GlideApp.with(context)
                 .load(post.getKeyImage().getUrl())
                 .into(holder.ivPostImage);
-
-       // Log.i("whatever", post.getKeyImage().getUrl());
     }
 
     @Override
@@ -86,6 +84,8 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>
         {
             int position = getAdapterPosition();
 
+            Post post = posts.get(position);
+
             if(position != RecyclerView.NO_POSITION)
             {
                 if(v.getId() == R.id.ivLike)
@@ -98,7 +98,6 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>
                 }
                 else
                 {
-                    Post post = posts.get(position);
                     listener.moveToDetailsPage(post);
                 }
             }

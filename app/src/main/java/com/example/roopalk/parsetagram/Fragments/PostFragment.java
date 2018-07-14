@@ -34,7 +34,6 @@ public class PostFragment extends Fragment
     onFragmentInteractionListener listener;
     @BindView(R.id.etDescription) EditText etDescription;
     @BindView(R.id.create_btn) Button btnCreate;
-    @BindView(R.id.refresh_btn) Button btnRefresh;
     @BindView(R.id.ivPreview) ImageView ivPreview;
 
     public final String TAG = "Camera";

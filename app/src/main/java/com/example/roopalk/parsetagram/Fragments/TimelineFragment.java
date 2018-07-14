@@ -78,8 +78,6 @@ public class TimelineFragment extends Fragment {
         });
 
         swipeContainer.setColorSchemeResources(android.R.color.holo_blue_bright, android.R.color.holo_green_light, android.R.color.holo_orange_light, android.R.color.holo_red_light);
-
-        // Store the listener (activity) that will have events fired once the fragment is attached
     }
 
     @Override
@@ -94,7 +92,8 @@ public class TimelineFragment extends Fragment {
                     + " must implement MyListFragment.OnItemSelectedListener");
         }
     }
-    public void loadTopPosts() {
+    public void loadTopPosts()
+    {
         final Post.Query postsQuery = new Post.Query();
         postsQuery
                 .getTop()
@@ -109,7 +108,8 @@ public class TimelineFragment extends Fragment {
                         postAdapter.notifyDataSetChanged();
                         //Log.d(TAG, "Post[" + i + "] = " + objects.get(i).getKeyDescription() + "\n username = " + objects.get(i).getKeyUser().getUsername());
                     }
-                } else {
+                }
+                else {
                     Log.e(TAG, "Failed");
                 }
             }

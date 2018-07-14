@@ -25,19 +25,13 @@ import butterknife.ButterKnife;
 public class HomeActivity extends AppCompatActivity implements onFragmentInteractionListener
 {
 
-    @BindView(R.id.bottom_navigation)
-    BottomNavigationView bnv;
-
+    @BindView(R.id.bottom_navigation) BottomNavigationView bnv;
     //Fragments
     private Fragment cameraFragment;
     private Fragment postFragment;
     private Fragment timelineFragment;
     private Fragment userFragment;
     private Fragment postDetailsFragment;
-
-
-    Bitmap bitmap;
-    File file;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,7 +84,7 @@ public class HomeActivity extends AppCompatActivity implements onFragmentInterac
     @Override
     public void moveToPostPage(Bitmap bitmap, File file)
     {
-        PostFragment postFragment = PostFragment.newInstance(bitmap, file);
+        postFragment = PostFragment.newInstance(bitmap, file);
         FragmentTransaction ft = getFragmentManager().beginTransaction();
         ft.replace(R.id.placeholder, postFragment);
         ft.commit();
